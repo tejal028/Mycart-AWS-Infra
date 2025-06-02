@@ -1,7 +1,7 @@
 providers.tf
 terraform.tfvars
 terraform*
-
+plan*
 
 # Local .terraform directories
 .terraform/
