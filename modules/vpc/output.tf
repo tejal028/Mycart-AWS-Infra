@@ -14,9 +14,9 @@ output "private_subnet-1_id" {
     value = aws_subnet.private_subnet-1.id
 }
 
-# output "private_subnet-2_id" {
-#     value = aws_subnet.private_subnet-2.id
-# }
+output "private_subnet-2_id" {
+    value = aws_subnet.private_subnet-2.id
+}
 
 output "igw_id" {
   value = aws_internet_gateway.igw.id

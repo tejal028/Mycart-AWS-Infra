@@ -40,16 +40,16 @@ resource "aws_subnet" "private_subnet-1" {
 #     }
 # }
 
-# #Private Subnet-2 in AZ: ap-south-1b
-# resource "aws_subnet" "private_subnet-2" {
-#     vpc_id = aws_vpc.vpc_ap-south-1.id
-#     cidr_block = var.cidr_ip[3]
-#     availability_zone = var.az_name[1]
+#Private Subnet-2 in AZ: ap-south-1b
+resource "aws_subnet" "private_subnet-2" {
+    vpc_id = aws_vpc.vpc_ap-south-1.id
+    cidr_block = var.cidr_ip[2]
+    availability_zone = var.az_name[1]
 
-#     tags = {
-#         Name = "Private_subnet-ap-south-1b"
-#     }
-# }
+    tags = {
+        Name = "Private_subnet-ap-south-1b"
+    }
+}
 
 #Internet Gateway:
 resource "aws_internet_gateway" "igw" {
@@ -116,7 +116,7 @@ resource "aws_route_table_association" "private_association_1" {
     route_table_id = aws_route_table.private_RT.id
 }
 
-# resource "aws_route_table_association" "private_association_2" {
-#     subnet_id = aws_subnet.private_subnet-2.id
-#     route_table_id = aws_route_table.private_RT.id
-# }
+resource "aws_route_table_association" "private_association_2" {
+    subnet_id = aws_subnet.private_subnet-2.id
+    route_table_id = aws_route_table.private_RT.id
+}
