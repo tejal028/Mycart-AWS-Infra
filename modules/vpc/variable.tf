@@ -16,10 +16,10 @@ variable "az_name" {
     type = list(string)
 }
 
-variable "public_rt_cidr" {
-    type = string
-}
+# variable "public_rt_cidr" {
+#     type = string
+# }
 
-variable "private_rt_cidr" {
-    type = string
-}
+# variable "private_rt_cidr" {
+#     type = string
+# }
